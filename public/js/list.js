@@ -18,7 +18,7 @@ $(function() {
 		var showName = $("#addShow #show").val()
 		console.log("here");
 		  $.ajax({
-		    url: 'addToList/'+showName,
+		    url: '/addToList/'+showName,
 		    type: 'PUT',
 		    success: function(result) {
 		    	console.log("result")
