@@ -1,0 +1,40 @@
+<head>
+	<link rel="stylesheet" type="text/css" href='css/home.css'/>
+	<link rel="stylesheet" type="text/css" href='css/style.css'/>
+	<script src='http://code.jquery.com/jquery-3.1.1.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js'></script>
+	<script src='js/list.js'></script>
+</head>
+
+<div class="login-page">
+<h1> Your List </h1>
+<div>
+	<h4>Add a Show:</h4>
+	<form id="addShow">
+		<div>
+          <label>Show Name:</label>
+          <input id="show" type="text" name="Show Name"/><br><br>
+      </div>
+      <div>
+          <input type="submit" class="dropbtn" value="Add Show"/>
+      </div>
+  </form>
+  <div id="return"></div>
+	<form method="get" action="/home">
+		<button class ="dropbtn" type="submit">Calendar</button>
+	</form>
+	<table>
+	   <tr>
+	      <th>Name</th>
+	      <th>Remove</th>
+	   </tr>
+
+	   <% for (var i = 0; i < shows.length; i++) { %>
+	    <tr>
+	      <td><%= shows[i] %></td>
+	      <td><button onclick="removeShow(this)" data-show=<%= shows[i] %> class="dropbtn">Remove</button></td>
+	    </tr>    
+	   <% } %>
+	</table>
+</div>
+</div>

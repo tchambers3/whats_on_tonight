@@ -1,0 +1,34 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.css"/>
+	<link rel="stylesheet" type="text/css" href='css/home.css'/>
+	<script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js'></script>
+	<script src='js/calendar.js'></script>
+</head>
+<body>
+	<!-- Three buttons on far right (Network dropdown, Watch List, Log Out) -->
+	<div class="dropdown">
+		<form method="post" action="/logout">
+    		<button class ="dropbtn" type="submit">Log Out</button>
+		</form>
+	</div>
+	<div class="dropdown">
+		<form method="post" action="/list">
+    		<button class ="dropbtn" type="submit">Edit Your List</button>
+		</form>
+	</div>
+	<div class="dropdown">
+	  <button onclick="dropDownChose()" class="dropbtn">Networks</button>
+	  <div id="myDropdown" class="dropdown-content">
+	    <a href="#" onclick="nbc()">NBC</a>
+	    <a href="#" onclick="abc()">ABC</a>
+	    <a href="#" onclick="cbs()">CBS</a>
+	    <a href="#" onclick="fox()">FOX</a>
+	    <a href="#" onclick="others()">Others</a>
+	    <a href="#" onclick="mine()">Mine</a>
+	  </div>
+	</div>
+	<!-- Create div for calendar -->
+	<div id="calendar"></div>
+</body>

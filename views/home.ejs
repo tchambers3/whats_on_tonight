@@ -1,0 +1,21 @@
+<table>
+   <tr>
+      <th>Name</th>
+      <th>Channel</th>
+      <th>Airtime</th>
+      <th>Runtime</th>
+   </tr>
+
+   <% for (var i = 0; i < shows.length; i++) { %>
+    <tr>
+      <td><%= shows[i].show.name %></td>
+      <% if (shows[i].show.network) { %> 
+      	<td><%= shows[i].show.network.name %></td>
+      <% } else { %>
+      	<td> None </td>
+      <% } %>
+      <td><%= shows[i].airtime %></td>
+      <td><%= shows[i].runtime %></td>
+    </tr>    
+   <% } %>
+</table>
